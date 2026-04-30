@@ -18,24 +18,27 @@
 }
 
 .sidebar nav ul li a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   padding: 0.75rem 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidebar nav ul li a:hover {
   background-color: var(--accent-bg);
   color: var(--accent);
+  transform: translateX(4px);
 }
 
-.sidebar nav ul li a[class*="active"] {
-  background-color: var(--accent);
-  color: white;
-  box-shadow: var(--shadow);
+.active {
+  background-color: var(--accent) !important;
+  color: white !important;
+  box-shadow: 0 8px 16px -4px var(--accent-bg);
 }
 
 @media (max-width: 768px) {

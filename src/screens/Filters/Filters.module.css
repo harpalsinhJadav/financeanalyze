@@ -1,0 +1,37 @@
+.container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filterCard {
+  composes: card from global;
+  composes: glass from global;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rangeInputs {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.rangeInputs span {
+  opacity: 0.5;
+}
