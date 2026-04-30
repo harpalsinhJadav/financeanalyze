@@ -1,35 +1,31 @@
-# Expense Tracker Application
+# Finance Analyze App - Blueprint
 
-## Overview
+## Project Overview
+A modern personal finance dashboard built with React, Vite, and TypeScript. It features transaction tracking, spending analytics via charts, and a clean, responsive interface.
 
-This is a simple expense tracker application built with React. It allows users to track their expenses, view their spending habits, and manage their finances.
+## Current State & Features
+- **Dashboard:** Displays spending overview with Pie and Bar charts.
+- **Transaction Management:** Add new transactions and view transaction history.
+- **Search & Filter:** Search transactions by description and filter by category/amount.
+- **Flagging:** Mark suspicious or important transactions.
+- **Theming:** Support for light and dark modes via `ThemeContext`.
+- **Navigation:** Multi-page navigation using `react-router-dom`.
 
-## Getting Started
+## Tech Stack
+- **Framework:** React 19
+- **Build Tool:** Vite 8
+- **Styling:** Vanilla CSS Modules with global theme variables.
+- **State Management:** React Context API (TransactionContext, ThemeContext).
+- **Charts:** Chart.js with `react-chartjs-2`.
+- **Navigation:** React Router 7.
 
-To get started with the application, you will need to have Node.js and npm installed on your machine. Once you have those installed, you can follow these steps:
+## Recent Changes
+- Fixed broken build by installing missing dependencies (`npm install`).
+- Resolved missing CSS module files for `Layout` and `Sidebar` components.
+- Fixed a `SyntaxError` in `TransactionContext.tsx` by using `import type` for the `Transaction` interface.
+- Verified app functionality at `http://localhost:5173/`.
 
-1.  Clone the repository to your local machine.
-2.  Install the dependencies by running `npm install`.
-3.  Start the development server by running `npm run dev`.
-4.  Open your browser and navigate to `http://localhost:3000`.
-
-## Next Steps
-
-*   Implement user authentication.
-*   Connect to a database to persist data.
-*   Add more chart types.
-*   Implement a budget feature.
-*   Add support for multiple currencies.
-
-## Features
-
-*   **Dashboard:** View a summary of your expenses, including a list of recent transactions and charts showing your spending by category and over time.
-*   **Add Transaction:** Add new transactions to your expense list.
-*   **Transaction Detail:** View the details of a specific transaction.
-*   **Flagged Transactions:** Flag transactions for follow-up.
-*   **Filters:** Filter transactions by category and amount.
-*   **Profile:** View and edit your user profile.
-*   **Settings:** Change your notification and privacy settings.
-*   **Search:** Search for transactions by their description.
-*   **Theming:** Toggle between light and dark themes.
-*   **Charts:** Visualize your spending with pie and bar charts.
+## Planned Improvements
+- Enhance visual aesthetics with better gradients and micro-animations.
+- Improve the "Add Transaction" form with better validation and UI feedback.
+- Add more detailed analytics screens.

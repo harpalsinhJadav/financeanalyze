@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
-import { transactions as initialTransactions, Transaction } from '../data/transactions';
+import { transactions as initialTransactions } from '../data/transactions';
+import type { Transaction } from '../data/transactions';
 
 interface Filters {
   category: string;
