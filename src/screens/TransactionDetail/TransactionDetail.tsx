@@ -96,7 +96,11 @@ const TransactionDetail: React.FC = () => {
 
             <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
               <div className={styles.label} style={{ marginBottom: '0.5rem' }}>Description</div>
-              <p style={{ margin: 0, fontWeight: 500, color: 'var(--text-h)' }}>{transaction.description}</p>
+              {/* BUG 8: XSS Vulnerability (Security) */}
+              <p 
+                style={{ margin: 0, fontWeight: 500, color: 'var(--text-h)' }}
+                dangerouslySetInnerHTML={{ __html: transaction.description }}
+              />
             </div>
           </div>
 

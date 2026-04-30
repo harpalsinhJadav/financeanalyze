@@ -12,6 +12,10 @@ import styles from './Sidebar.module.css';
 const Sidebar: React.FC = () => {
   return (
     <div className={styles.sidebar}>
+      <div className={styles.searchBox}>
+        {/* BUG 4: Typo in placeholder (Minor) */}
+        <input type="text" placeholder="Search transctions..." className={styles.searchInput} />
+      </div>
       <nav>
         <ul>
           <li>
@@ -29,7 +33,8 @@ const Sidebar: React.FC = () => {
           <li>
             <NavLink to="/flagged" className={({ isActive }) => isActive ? styles.active : ''}>
               <Flag size={20} />
-              <span>Flagged</span>
+              {/* BUG 5: Typo 'Flaged' (Minor) */}
+              <span>Flaged</span>
             </NavLink>
           </li>
           <li>

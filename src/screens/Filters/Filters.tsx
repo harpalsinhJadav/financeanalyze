@@ -20,10 +20,15 @@ const Filters: React.FC = () => {
   };
 
   const filteredTransactions = transactions.filter((t) => {
-    const matchesCategory = filters.category === '' || t.category.toLowerCase().includes(filters.category.toLowerCase());
+    // BUG 1: Case-sensitive search (Major)
+    const matchesCategory = filters.category === '' || t.category.includes(filters.category);
+    
     const matchesMinAmount = t.amount >= filters.minAmount;
-    const matchesMaxAmount = t.amount <= filters.maxAmount;
-    return matchesCategory && matchesMinAmount && matchesMaxAmount;
+    
+    // BUG 2: Ignoring maxAmount (Major)
+    // const matchesMaxAmount = t.amount <= filters.maxAmount;
+    
+    return matchesCategory && matchesMinAmount;
   });
 
   return (
@@ -43,7 +48,8 @@ const Filters: React.FC = () => {
             <input
               type="text"
               className="input-field"
-              placeholder="e.g. Food, Income"
+              // BUG 3: Typo in placeholder (Minor)
+              placeholder="e.g. Food, transctions"
               value={filters.category}
               onChange={handleCategoryChange}
             />

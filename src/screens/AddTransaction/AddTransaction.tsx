@@ -18,11 +18,13 @@ const AddTransaction: React.FC = () => {
     
     addTransaction({ 
       description, 
-      amount: Number(amount), 
+      amount: amount as any, // BUG 11: Storing amount as string (Major)
       date, 
       category: 'uncategorized' 
     });
-    navigate('/');
+    // BUG 12: Missing redirect (Major UX)
+    // navigate('/');
+    alert('Transaction added!');
   };
 
   return (
