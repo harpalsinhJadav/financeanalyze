@@ -1,68 +1,35 @@
-# Financial Dashboard Application Blueprint
+# Expense Tracker Application
 
 ## Overview
 
-This document outlines the plan and implementation details for a multi-screen financial dashboard web application built with React, Vite, and TypeScript. The application will feature a clean, modern UI with a strict separation of concerns, modular architecture, and simulated API interactions.
+This is a simple expense tracker application built with React. It allows users to track their expenses, view their spending habits, and manage their finances.
 
-## Core Technologies
+## Getting Started
 
-- **UI Framework:** React JS (with Vite)
-- **Language:** TypeScript
-- **State Management:** Redux Toolkit (for transactions, analytics) and Context API (for theme, user settings)
-- **Routing:** React Router DOM
-- **Styling:** CSS Modules
-- **Charting:** Recharts
-- **Icons:** Lucide React
+To get started with the application, you will need to have Node.js and npm installed on your machine. Once you have those installed, you can follow these steps:
 
-## Project Structure
+1.  Clone the repository to your local machine.
+2.  Install the dependencies by running `npm install`.
+3.  Start the development server by running `npm run dev`.
+4.  Open your browser and navigate to `http://localhost:3000`.
 
-The project will follow a strict folder structure to ensure a clean separation of concerns:
+## Next Steps
 
-```
-/src
-├──- /assets
-├──- /components
-├──- /contexts
-├──- /hooks
-├──- /screens
-├──- /services
-├──- /store (Redux)
-├──- /styles
-├──- /types
-└──- /utils
-```
+*   Implement user authentication.
+*   Connect to a database to persist data.
+*   Add more chart types.
+*   Implement a budget feature.
+*   Add support for multiple currencies.
 
-## Implemented Features
+## Features
 
-*(This section will be updated as features are built.)*
-
-## Development Plan
-
-### Phase 1: Setup and Foundation (Current)
-
-- **Step 1.1:** Install necessary dependencies (`@reduxjs/toolkit`, `react-redux`, `react-router-dom`, `recharts`, `lucide-react`, `clsx`).
-- **Step 1.2:** Create the mandatory folder structure.
-- **Step 1.3:** Define core TypeScript types in `/src/types`.
-- **Step 1.4:** Set up the Redux store in `/src/store`.
-- **Step 1.5:** Create a Theme Context in `/src/contexts`.
-- **Step 1.6:** Implement routing in `src/App.tsx` and wrap the app with the necessary providers.
-
-### Phase 2: Mock Services and Data
-
-- Implement mock API services for transactions and user data.
-
-### Phase 3: Core Components
-
-- Build reusable UI components (`TransactionList`, `ATMCard`, `Loader`, etc.).
-
-### Phase 4: Screen Implementation
-
-- Build each screen one by one, starting with the Dashboard.
-  - Dashboard Screen
-  - Transaction Detail Screen
-  - Profile Screen
-  - Analytics Screen
-  - Flagged Transactions Screen
-  - Add Transaction Screen
-  - Advanced Filter Screen
-
+*   **Dashboard:** View a summary of your expenses, including a list of recent transactions and charts showing your spending by category and over time.
+*   **Add Transaction:** Add new transactions to your expense list.
+*   **Transaction Detail:** View the details of a specific transaction.
+*   **Flagged Transactions:** Flag transactions for follow-up.
+*   **Filters:** Filter transactions by category and amount.
+*   **Profile:** View and edit your user profile.
+*   **Settings:** Change your notification and privacy settings.
+*   **Search:** Search for transactions by their description.
+*   **Theming:** Toggle between light and dark themes.
+*   **Charts:** Visualize your spending with pie and bar charts.

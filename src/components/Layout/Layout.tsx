@@ -1,0 +1,22 @@
+import React from 'react';
+import Header from '../Header/Header';
+import Sidebar from '../Sidebar/Sidebar';
+import { useTheme } from '../../contexts/ThemeContext';
+import styles from './Layout.module.css';
+import '../../theme.css';
+
+const Layout: React.FC = ({ children }) => {
+  const { theme } = useTheme();
+
+  return (
+    <div className={`${styles.layout} ${theme}`}>
+      <Header />
+      <div className={styles.main}>
+        <Sidebar />
+        <div className={styles.content}>{children}</div>
+      </div>
+    </div>
+  );
+};
+
+export default Layout;
