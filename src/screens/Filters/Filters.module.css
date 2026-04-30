@@ -35,3 +35,72 @@
 .rangeInputs span {
   opacity: 0.5;
 }
+
+.results {
+  margin-top: 3rem;
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.resultsHeader h3 {
+  margin: 0;
+}
+
+.countBadge {
+  background: var(--accent-bg);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.transactionCard {
+  composes: card from global;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.desc {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.meta {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  display: flex;
+  gap: 1rem;
+}
+
+.amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem;
+  opacity: 0.5;
+  composes: glass from global;
+  border-radius: 20px;
+}

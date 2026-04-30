@@ -5,7 +5,7 @@ import { useTransactions } from '../../contexts/TransactionContext';
 import styles from './Filters.module.css';
 
 const Filters: React.FC = () => {
-  const { filters, setFilters } = useTransactions();
+  const { transactions, filters, setFilters } = useTransactions();
 
   const handleCategoryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilters({ ...filters, category: e.target.value });
@@ -18,6 +18,13 @@ const Filters: React.FC = () => {
   const handleMaxAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilters({ ...filters, maxAmount: parseFloat(e.target.value) || Infinity });
   };
+
+  const filteredTransactions = transactions.filter((t) => {
+    const matchesCategory = filters.category === '' || t.category.toLowerCase().includes(filters.category.toLowerCase());
+    const matchesMinAmount = t.amount >= filters.minAmount;
+    const matchesMaxAmount = t.amount <= filters.maxAmount;
+    return matchesCategory && matchesMinAmount && matchesMaxAmount;
+  });
 
   return (
     <Layout>
@@ -64,6 +71,38 @@ const Filters: React.FC = () => {
                 onChange={handleMaxAmountChange}
               />
             </div>
+          </div>
+        </div>
+
+        <div className={styles.results}>
+          <div className={styles.resultsHeader}>
+            <h3>Filtered Results</h3>
+            <span className={styles.countBadge}>{filteredTransactions.length} found</span>
+          </div>
+
+          <div className={styles.list}>
+            {filteredTransactions.length > 0 ? (
+              filteredTransactions.map((t) => (
+                <div key={t.id} className={styles.transactionCard}>
+                  <div className={styles.mainInfo}>
+                    <span className={styles.desc}>{t.description}</span>
+                    <div className={styles.meta}>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <Tag size={12} /> {t.category}
+                      </span>
+                      <span>{t.date}</span>
+                    </div>
+                  </div>
+                  <span className={styles.amount}>
+                    ${t.amount.toFixed(2)}
+                  </span>
+                </div>
+              ))
+            ) : (
+              <div className={styles.empty}>
+                No transactions match your filters.
+              </div>
+            )}
           </div>
         </div>
       </div>

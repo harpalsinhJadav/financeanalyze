@@ -17,10 +17,11 @@ export interface Transaction {
   date: string;
   amount: number;
   type: TransactionType;
+  category: string;
   description: string;
   merchant: string;
   status: 'completed' | 'pending' | 'failed';
-  isFlagged: boolean;
+  flagged: boolean;
 }
 
 export interface Filters {
@@ -33,7 +34,7 @@ export interface Filters {
     min: number | null;
     max: number | null;
   };
-  isFlagged: boolean;
+  flagged: boolean;
 }
 
 export interface AnalyticsData {
