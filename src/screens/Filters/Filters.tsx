@@ -20,12 +20,10 @@ const Filters: React.FC = () => {
   };
 
   const filteredTransactions = transactions.filter((t) => {
-    // BUG 1: Case-sensitive search (Major)
     const matchesCategory = filters.category === '' || t.category.includes(filters.category);
     
     const matchesMinAmount = t.amount >= filters.minAmount;
     
-    // BUG 2: Ignoring maxAmount (Major)
     // const matchesMaxAmount = t.amount <= filters.maxAmount;
     
     return matchesCategory && matchesMinAmount;
@@ -48,7 +46,6 @@ const Filters: React.FC = () => {
             <input
               type="text"
               className="input-field"
-              // BUG 3: Typo in placeholder (Minor)
               placeholder="e.g. Food, transctions"
               value={filters.category}
               onChange={handleCategoryChange}

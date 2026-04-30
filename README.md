@@ -1,39 +1,28 @@
 # Senior Developer Recruitment - Technical Exam
 
-Welcome to the Finance Analyze technical assessment. Your goal is to identify, debug, and fix several issues within this codebase. The project is currently running, but it contains a variety of bugs ranging from minor typos to critical security vulnerabilities and broken business logic.
+Welcome to the Finance Analyze technical assessment. 
 
-## Task Overview
+## The Challenge
 
-You are expected to find and resolve the following:
+This application was recently handed over from a junior team and is currently in a "sub-optimal" state. While it appears to run, it is riddled with roughly **20 issues** that span across visual regressions, logical bugs, state management flaws, and critical security vulnerabilities.
 
-### 1. Minor Issues (5)
-- Find and fix typos in navigation labels and placeholders.
-- Resolve any console warnings or minor UI inconsistencies (e.g., misaligned icons).
-- Standardize terminology across the app (e.g., "Flagged" vs "Flaged").
+As a Senior Developer, your mission is to:
+1.  **Audit the codebase:** Perform a thorough walkthrough of the application to identify all "non-production-ready" elements.
+2.  **Fix the issues:** Resolve as many bugs as you can within the allotted time.
+3.  **Sanitize the project:** Ensure that the application follows modern security best practices and maintains data integrity.
 
-### 2. UI/UX Issues (5)
-- Fix layout overlapping issues on specific screens (e.g., Profile, Transaction Detail).
-- Ensure consistent button styling and feedback across the application.
-- Improve the responsive behavior of the dashboard cards.
+## Task Requirements
 
-### 3. Major Logic Issues (5)
-- **Broken Search:** Searching transactions currently has several logical flaws. Make it robust and user-friendly.
-- **Faulty Filtering:** The amount range filter is not working as expected. Ensure both Min and Max limits are respected.
-- **Data Integrity:** New transactions are being stored with incorrect data types, causing downstream calculation errors.
-- **Navigation Flow:** Fix broken redirects and success/error feedback loops in the "Add Transaction" flow.
-- **State Sync:** Resolve issues where flagging a transaction in one view doesn't immediately reflect in others.
-
-### 4. Security Vulnerabilities (3)
-- **Hardcoded Secrets:** Locate and remove sensitive API keys or secrets that should not be in the source code.
-- **Sensitive Data Logging:** Identify where the application is leaking sensitive user data to the console logs.
-- **Insecure Data Storage:** Find and fix instances where PII (Personally Identifiable Information) is stored insecurely.
+- **Exploration:** You are not provided with a bug list. You must use your experience to find what's broken (both visible in the UI and hidden in the logic/data layers).
+- **Quality:** Your fixes should be clean, type-safe (TypeScript), and follow React best practices.
+- **Documentation:** Provide a brief summary of the major issues you discovered and how you resolved them.
 
 ## Evaluation Criteria
-- **Code Quality:** Clean, maintainable, and type-safe solutions.
-- **Debugging Skill:** Ability to trace issues to their root cause efficiently.
-- **Security Awareness:** Understanding of mobile and global security best practices (Hardcoded secrets, PII handling).
-- **UX Intuition:** Fixing not just the code, but the user experience.
+- **Detection Rate:** How many of the 20+ issues did you successfully identify?
+- **Root Cause Analysis:** Did you fix the symptom or the underlying logic/architecture flaw?
+- **Security Mindset:** Did you identify the global security risks present in the project?
+- **Professionalism:** Is the final code ready for a production deployment?
 
 ---
 
-**Good luck! Please document your changes and provide a brief summary of how you approached the security fixes.**
+**Good luck! We are looking for candidates who can see beyond the surface and deliver a robust, secure product.**

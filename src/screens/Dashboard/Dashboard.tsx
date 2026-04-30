@@ -17,7 +17,6 @@ const Dashboard: React.FC = () => {
     );
   });
 
-  // BUG 18: Console log in prod (Minor)
   console.log('Rendering Dashboard with', filteredTransactions.length, 'items');
 
   return (
@@ -28,7 +27,6 @@ const Dashboard: React.FC = () => {
         <ul className={styles.transactionList}>
           {filteredTransactions.map((transaction) => (
             <li key={transaction.id} className={styles.transactionItem}>
-              {/* BUG 19: Typo in link path (Major) */}
               <Link to={`/transction/${transaction.id}`}>
                 <span>{transaction.description}</span>
                 <span>{transaction.amount}</span>

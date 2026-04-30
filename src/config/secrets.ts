@@ -1,4 +1,3 @@
-// BUG 20: Hardcoded API keys (Security - Global)
 export const FIREBASE_CONFIG = {
   apiKey: "AIzaSyAs-FakeKey-1234567890",
   authDomain: "finance-analyze-prod.firebaseapp.com",

@@ -25,8 +25,6 @@ export const TransactionProvider: React.FC = ({ children }) => {
   const [filters, setFilters] = useState<Filters>({ category: '', minAmount: 0, maxAmount: Infinity });
   const [searchTerm, setSearchTerm] = useState('');
 
-  // BUG 13: Console log in "production" (Minor)
-  console.log('DEBUG: Context rendered', transactions.length);
 
   const addTransaction = (transaction: Omit<Transaction, 'id' | 'flagged'>) => {
     const newTransaction: Transaction = {
@@ -38,7 +36,6 @@ export const TransactionProvider: React.FC = ({ children }) => {
   };
 
   const toggleFlag = (id: string) => {
-    // BUG 14: Mutation and non-functional update causing state issues (Major)
     const newTransactions = transactions;
     const index = newTransactions.findIndex(t => t.id === id);
     if (index !== -1) {

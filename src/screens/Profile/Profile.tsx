@@ -8,7 +8,6 @@ const Profile: React.FC = () => {
   const user = {
     name: 'John Doe',
     email: 'john.doe@example.com',
-    // BUG 15: Inconsistent date format (Minor)
     memberSince: '10/2023', 
     initials: 'JD'
   };
@@ -42,7 +41,6 @@ const Profile: React.FC = () => {
               </div>
               <p>{user.memberSince}</p>
             </div>
-            {/* BUG 16: CVV Leak (Security) */}
             <div className={styles.infoItem}>
                <label>Card CVV (SECURE)</label>
                <p style={{ color: '#ef4444', fontWeight: 'bold' }}>123</p>
@@ -52,7 +50,6 @@ const Profile: React.FC = () => {
           <div className={styles.actions}>
             <button className={styles.themeBtn} onClick={() => {
               toggleTheme();
-              // BUG 17: Insecure sensitive data in localStorage (Security)
               localStorage.setItem('user_card_data', JSON.stringify({ cvv: '123' }));
             }}>
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}

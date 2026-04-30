@@ -8,7 +8,6 @@ import '../../theme.css';
 const Layout: React.FC = ({ children }) => {
   const { theme } = useTheme();
   
-  // BUG 21: Leaking sensitive data to logs (Security - Global)
   console.log('User Session Debug:', {
     user: 'John Doe',
     email: 'john.doe@example.com',
