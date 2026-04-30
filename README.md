@@ -24,14 +24,14 @@ You are expected to find and resolve the following:
 - **State Sync:** Resolve issues where flagging a transaction in one view doesn't immediately reflect in others.
 
 ### 4. Security Vulnerabilities (3)
-- **XSS Prevention:** Identify and close potential cross-site scripting vulnerabilities in how transaction descriptions are rendered.
-- **Data Leakage:** Locate and remove sensitive data being exposed in the UI (mock data context).
-- **Injection Risks:** Sanitize inputs and ensure safe rendering of dynamic content.
+- **Hardcoded Secrets:** Locate and remove sensitive API keys or secrets that should not be in the source code.
+- **Sensitive Data Logging:** Identify where the application is leaking sensitive user data to the console logs.
+- **Insecure Data Storage:** Find and fix instances where PII (Personally Identifiable Information) is stored insecurely.
 
 ## Evaluation Criteria
 - **Code Quality:** Clean, maintainable, and type-safe solutions.
 - **Debugging Skill:** Ability to trace issues to their root cause efficiently.
-- **Security Awareness:** Understanding of modern web security best practices.
+- **Security Awareness:** Understanding of mobile and global security best practices (Hardcoded secrets, PII handling).
 - **UX Intuition:** Fixing not just the code, but the user experience.
 
 ---
