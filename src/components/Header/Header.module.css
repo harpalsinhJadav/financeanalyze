@@ -13,3 +13,11 @@
 .nav a:hover {
   text-decoration: underline;
 }
+
+.headerTitle {
+  color: black;
+}
+
+.headerTitleDark {
+  color: white;
+}

@@ -15,13 +15,18 @@ const AddTransaction: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!description || !amount || !date) return;
-    
+    console.log("before called add transcations")
     addTransaction({ 
       description, 
       date, 
-      category: 'uncategorized' 
+      category: 'uncategorized',
+      type:'credit',
+      merchant:'',
+      status:'pending',
+      amount:Number(amount) 
     });
-    // navigate('/');
+    console.log("called add transcations")
+    navigate('/');
     alert('Transaction added!');
   };
 

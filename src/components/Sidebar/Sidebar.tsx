@@ -12,9 +12,6 @@ import styles from './Sidebar.module.css';
 const Sidebar: React.FC = () => {
   return (
     <div className={styles.sidebar}>
-      <div className={styles.searchBox}>
-        <input type="text" placeholder="Search transctions..." className={styles.searchInput} />
-      </div>
       <nav>
         <ul>
           <li>
@@ -32,7 +29,7 @@ const Sidebar: React.FC = () => {
           <li>
             <NavLink to="/flagged" className={({ isActive }) => isActive ? styles.active : ''}>
               <Flag size={20} />
-              <span>Flaged</span>
+              <span>Flagged</span>
             </NavLink>
           </li>
           <li>

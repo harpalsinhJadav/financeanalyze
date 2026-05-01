@@ -24,9 +24,9 @@ const Filters: React.FC = () => {
     
     const matchesMinAmount = t.amount >= filters.minAmount;
     
-    // const matchesMaxAmount = t.amount <= filters.maxAmount;
+    const matchesMaxAmount = t.amount <= filters.maxAmount;
     
-    return matchesCategory && matchesMinAmount;
+    return matchesCategory && matchesMinAmount && matchesMaxAmount;
   });
 
   return (

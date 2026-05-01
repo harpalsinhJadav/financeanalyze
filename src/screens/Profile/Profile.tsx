@@ -30,7 +30,7 @@ const Profile: React.FC = () => {
             <div className={styles.infoItem}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
                 <Mail size={16} />
-                <label>Email Address</label>
+                <label >Email Address</label>
               </div>
               <p>{user.email}</p>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { 
   ArrowLeft, 
@@ -18,7 +18,10 @@ const TransactionDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { transactions, toggleFlag } = useTransactions();
+  alert(transactions)
   const transaction = transactions.find((t) => t.id === id);
+
+  useEffect(() => {},[toggleFlag])
 
   if (!transaction) {
     return (

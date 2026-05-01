@@ -27,7 +27,7 @@ const Dashboard: React.FC = () => {
         <ul className={styles.transactionList}>
           {filteredTransactions.map((transaction) => (
             <li key={transaction.id} className={styles.transactionItem}>
-              <Link to={`/transction/${transaction.id}`}>
+              <Link to={`/transaction/${transaction.id}`}>
                 <span>{transaction.description}</span>
                 <span>{transaction.amount}</span>
               </Link>
